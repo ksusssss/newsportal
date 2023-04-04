@@ -1,0 +1,25 @@
+{% extends "wrapper.html" %}
+
+{% block content %}
+    <div class="main_body">
+        <a href="/"><div class="back_title">Назад</div></a>
+        <h1 class="supply_forms_main_title">Предложить новость:</h1>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+
+                <h4 class="supply_forms_title">Название статьи:</h4>
+                {{ form.supply_title }}<br>
+
+                <h4 class="supply_forms_title">Статья:</h4>
+                {{ form.supply_post }}<br>
+
+                <h4 class="supply_forms_title">Автор:</h4>
+                {{ form.supply_author }}<br>
+
+                <span>{{ error }}</span>
+                <button type="submit" class="supply_forms_button" >Предложить новость</button><br>
+            </form>
+        </div>
+    </div>
+{% endblock %}
